@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
             headers: {'Content-Type': 'application/json'}
         })
         if (!response.ok)
-            return `User ${userData.username} already exists`;
+            return `User Name already exists`;
         navigate('/success');
     };
 
