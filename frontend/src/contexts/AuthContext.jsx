@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
             headers: {'Content-Type': 'application/json'}
         });
         if (!response.ok)
-            return `${response.status}: ${response.statusText}`;
+            return `Invalid credentials`;
         response = await response.json();
         localStorage.setItem('token', response.token);
         
@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
             headers: {'Content-Type': 'application/json'}
         })
         if (!response.ok)
-            return `${response.status}: ${response.statusText}`;
+            return `User ${userData.username} already exists`;
         navigate('/success');
     };
 
